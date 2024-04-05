@@ -1,0 +1,41 @@
+{% load static %}
+ {% include "header.html" %} 
+<link rel="stylesheet" href="{% static '\css\task_form.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <!-- Logo image on the right side -->
+            <img src="\static\image\Entrust Logo Plain.jpg" alt="Logo">
+        </div>
+        <h3 style="color:{% if form.instance.pk %}blue{% else %}green{% endif %}">{% if form.instance.pk %}Edit Task{% else %}Add Task{% endif %}</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+             <!-- Input for image -->
+            <div class="split-inputs">
+            <div class="left-input">
+                <label for="id_name">Task:</label>
+                {{ form.task }}
+            </div>
+            <div class="right-input">
+                <label for="id_due_date">Due Date:</label>
+                <input type="date" name="due_date" required value="{{ request.POST.due_date }}"><!-- Input for join date -->
+            </div>
+            </div>
+         
+            <div class="split-inputs">
+                <div class="left-input">
+                    <label for="priority">Priority:</label>
+                    {{ form.priority }}
+                </div>
+                <div class="right-input">
+                    <label for="employe">Employee:</label>
+                    {{ form.employ }}<!-- Input for phone -->
+             <!-- Input for join date -->
+                </div>
+                </div>
+            <button type="submit">{% if form.instance.pk %}Update{% else %}Save{% endif %}</button>
+        </form>
+    </div>
+</body>
+</html>

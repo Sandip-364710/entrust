@@ -1,0 +1,38 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static '\css\employe_signup.css' %}">
+</head>
+<body>
+    <div class="signup-page">
+        <div class="signup-form">
+           <div class="logo">
+            <img src="\static\image\Entrust Logo Plain.jpg">
+           </div>
+            <form action="#" method="post">
+               {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                     {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                     {{ form.password2 }}
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="signup-link">
+                  <p>Already signup? <a href="{% url 'login' %}">login</a></div></p></div>
+              </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
