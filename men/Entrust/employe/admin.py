@@ -19,11 +19,11 @@ admin.site.register(Employ,Employadmin)
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('task', 'due_date','priority') # Include fields to display in the list view
     list_filter = ('priority',)  # Add priority to list filter if needed
-    search_fields = ("name",)
+    search_fields = ("task",)
 
     fieldsets = (
         ('taxt', {
-            'fields': ('name','due_date')
+            'fields': ('task','due_date')
         }),
     )
     
