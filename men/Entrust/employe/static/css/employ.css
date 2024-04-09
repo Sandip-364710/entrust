@@ -45,7 +45,7 @@ input[type="file"],
 input[type="text"],
 input[type="email"],
 input[type="date"],
-input[type="tel"],
+input[type="number"],
 select {
     width: 100%;
     padding: 8px;
