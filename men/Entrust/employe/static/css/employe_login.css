@@ -1,5 +1,4 @@
-  
- body {
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -20,30 +19,25 @@
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center; /* Center align the content */
-  margin-right: 40px;
-  margin-left: 30px;
-  width: 40%;
+  margin-right: 5%; /* Adjusted margin for smaller screens */
+  margin-left: 5%; /* Adjusted margin for smaller screens */
+  width: 90%; /* Adjusted width for smaller screens */
   transition: box-shadow 0.4s ease;
- 
-  
 }
+
 .login-form:hover {
   box-shadow: 5px 5px 5px 10px rgba(227, 181, 140, 0.927); /* Add box shadow on hover */
-  
-  } 
-  
+}
 
 .logo img {
-  /* Add margin below the logo */
-  width: 20%;
-  margin-top: 50px;
+  width: 40%; /* Adjusted width for smaller screens */
+  margin-top: 20px; /* Reduced margin for smaller screens */
 }
 
 .form-group {
   margin-bottom: 20px;
-  margin-top: 40px;
-  margin-right: 60px;
- 
+  margin-top: 20px; /* Reduced margin for smaller screens */
+  margin-right: 5%; /* Adjusted margin for smaller screens */
 }
 
 .form-group label {
@@ -76,8 +70,6 @@
   text-decoration: none; /* Remove underline */
 }
 
-
-
 button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -86,7 +78,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-   margin-right: 390px;
+  margin-right: 5%; /* Adjusted margin for smaller screens */
 }
 
 button:hover {
@@ -96,15 +88,29 @@ button:hover {
 .right-image img {
   width: 100%;
   border-radius: 5px;
-  margin-right: 40px;
-  height: 500px;
+  margin-right: 5%; /* Adjusted margin for smaller screens */
+  margin-bottom: 20px; /* Added margin for smaller screens */
+  height: auto; /* Ensure image height adjusts proportionally */
 }
+
 li {
-  margin-left: 30px;
+  margin-left: 5%; /* Adjusted margin for smaller screens */
 }
+
 ul li a {
   text-decoration: none;
   color: rgb(63, 15, 92);
-  margin-left: 20px;
+  margin-left: 5%; /* Adjusted margin for smaller screens */
   font-size: 20px;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .login-form {
+    width: 80%;
+  }
+  
+  .logo img {
+    width: 60%;
+  }
 }
