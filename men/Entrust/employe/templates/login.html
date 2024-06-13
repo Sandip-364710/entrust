@@ -4,15 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="\static\image\Entrust Logo Plain.jpg" type="">
+    <link rel="shortcut icon" href="{% static 'image/Entrust Logo Plain.jpg' %}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <title>Login Page</title>
-    <link rel="stylesheet" href="{% static '\css\employe_login1.css' %}">   
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .login-form {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            transition: box-shadow 0.4s ease; /* Added transition for smoother hover effect */
+        }
+        .login-form:hover {
+            background-color: #f0f0f0;
+            box-shadow: 5px 5px 5px 10px rgba(227, 181, 140, 0.927);  /* Change background color on hover */
+        }
+        .logo img {
+            width: 80px;
+            margin-bottom: 1rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        /* Styling for input fields */
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px); /* Adjust width of input fields */
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease; /* Added transition for smoother hover effect */
+        }
+        input[type="text"]:hover, input[type="password"]:hover {
+            border-color: #007bff; /* Change border color on hover */
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #007bff; /* Change border color on focus */
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add box shadow on focus */
+        }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            border: none;
+            color: #ffffff;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease; /* Added transition for smoother hover effect */
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .signup-link a {
+            color: #007bff;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 2rem;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .back-link:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <a style="text-decoration: none;" href="{% url 'home' %}"><h3 style="text-decoration: none; height: 10px; font-size: 60px;">&#8678</h3></a>  
+    <a class="back-link" href="{% url 'home' %}">Home</a> 
     <div class="login-container">
         {% if messages %}
         <script>
@@ -25,26 +120,24 @@
                 background: "linear-gradient(to left, #00b09b, #96c93d)",
               }
             }).showToast();
-            
             {% endfor %}
         </script>
-      {% endif %} 
-        <!-- Navigation links and logout button on the right side -->
+        {% endif %}
       
         <div class="login-form">
           
             <div class="logo">
-                <img src="\static\image\Entrust Logo Plain.jpg" alt="Logo">
+                <img src="{% static 'image/Entrust Logo Plain.jpg' %}" alt="Logo">
             </div>
-            <form  method="POST">
+            <form method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    {{ form.username }}
+                    <label style="margin-right: 230px;" for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                     {{ form.password }}
+                    <label style="margin-right: 230px;" for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit">Login</button>
                 <div class="signup-link">
