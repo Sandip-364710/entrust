@@ -1,5 +1,5 @@
 body {
-    background-image: url("/static/image/807bdc_76988d083c9f4658a7064389c3d13532~mv2_d_9833_4800_s_4_2.jpg");
+    /* background-image: url("/static/image/807bdc_76988d083c9f4658a7064389c3d13532~mv2_d_9833_4800_s_4_2.jpg"); */
     background-size: cover;
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     margin: 0; /* Remove default margin to avoid space around the body */
