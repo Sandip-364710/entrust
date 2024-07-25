@@ -1,8 +1,5 @@
 body{
     background-size: cover;
-
-  
-  
 }
 #leaveTable {
     width: 100%;
@@ -12,7 +9,7 @@ body{
 
 #leaveTable th,
 #leaveTable td {
-    border: 1px solid #ddd;
+    border: 1px solid #c4c3c3;
     padding: 8px;
   
 }
